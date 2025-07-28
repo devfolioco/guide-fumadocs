@@ -22,6 +22,9 @@ const config = {
       },
     ];
   },
+  images: {
+    formats: ["image/webp", "image/avif"],
+  },
 };
 
 export default withMDX(config);
