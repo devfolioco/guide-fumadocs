@@ -1,0 +1,47 @@
+{
+  "title": "Hello Builders",
+  "description": "This is devfolio docs",
+  "icon": "Building",
+  "root": true,
+  "pages": [
+    "---💙 Devfolio Glossary---",
+    "fun",
+    "creating-and-managing-your-account",
+    "linking-your-ethereum-wallet",
+    "settings",
+
+    "---👨‍💻 Devfolio for Hackers---",
+    "start-your-devfolio-hacker-experience-here",
+    "introduction",
+    "your-dev-profile",
+    "my-devfolio",
+    "badges",
+    "Projects",
+    "participating-in-hackathons",
+    "faqs-for-hackers",
+
+    "---🤹🏻‍♂️ Devfolio for organizers---",
+    "why-devfolio",
+    "modes",
+    "setting-up-a-hackathon-for-business",
+    "setting-up-a-hackathon-for-universities",
+    "setting-up-your-hackathon",
+    "organizer-dashboard",
+    "wrapping-up-the-hackathon",
+    "apply-with-devfolio-integration",
+    "leaderboard",
+    "organizer-judging",
+    "faqs-for-organizers",
+
+    "---💙 Onchain Features---",
+    "quadratic-voting",
+    "cryptocheer",
+    "onchain-credentials",
+
+    "---🧑‍🏫 Devfolio for Judges---",
+    "judging",
+    "offline-judging",
+    "online-judging",
+    "sponsor-judging"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Projects",
+  "description": "Adding and managing Projects.",
+  "icon": "Building",
+  "pages": [
+    "view-submissions",
+    "adding-managing-projects",
+    "inspire-me",
+    "report-a-project"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Claims",
+  "description": "Quick walkthrough to claim your schwag/bounty/Onchain Credentials",
+  "icon": "Building",
+  "pages": [
+    "claiming-your-schwag",
+    "claiming-your-bounties",
+    "claiming-your-onchain-credentials"
+  ]
+}

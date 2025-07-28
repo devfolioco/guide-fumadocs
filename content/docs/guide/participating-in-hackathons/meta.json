@@ -1,0 +1,21 @@
+{
+  "title": "Participating in Hackathons",
+  "description": "Learn how to take part in hackathons—from choosing the right mode to forming teams, submitting projects, and engaging with other participants.",
+  "icon": "Building",
+  "pages": [
+    "hackathon-modes",
+    "online-hackathons",
+    "applying-to-online-with-application-review-hackathons",
+    "offline-hackathons",
+    "withdrawing-your-hackathon-application",
+    "staking",
+    "rsvp",
+    "create-join-a-team",
+    "project-submission",
+    "judging-1",
+    "feedback-section",
+    "claims",
+    "report-a-project",
+    "view-submissions"
+  ]
+}

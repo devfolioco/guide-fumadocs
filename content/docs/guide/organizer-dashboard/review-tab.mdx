@@ -1,0 +1,124 @@
+---
+title: Review Tab
+description: The Overview Tab helps you accept, reject, or waitlist applications as per your hackathon guideline.
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+
+<Tabs items={["Online Mode", "Offline and Online with Application Review Mode"]} defaultValue="Online Mode">
+  <Tab value="Online Mode">
+    <p>
+      In <code>Online</code> mode, you can see a list of hackers with their respective status. You can filter out the list by Country or City depending on the nature of your request.
+    </p>
+
+    <p>The <strong>status of the applicant</strong> can be:</p>
+    <ul>
+      <li><code>Profile Submitted</code>: They have only applied to your hackathon</li>
+      <li><code>Project Submitted</code>: They have applied as well as submitted their project to your hackathon</li>
+    </ul>
+
+    <img src="/assets/image-9.5.png" alt="Online mode view" />
+    <p align="center"><i>Review Tab – Online Mode</i></p>
+  </Tab>
+
+  <Tab value="Offline and Online with Application Review Mode">
+    <p>
+      Here, you can review individual and team profiles to extend invitations to them to attend your hackathon (accept), decline their application (reject), or waitlist (apply/reject later) them. You can apply various filters to help you in the process.
+    </p>
+
+    <img src="/assets/image-9.6.png" alt="Offline/Review mode view" />
+    <p align="center"><i>Review Tab – Application Review Mode</i></p>
+
+    <h3>Filters:</h3>
+    <ul>
+      <li>Country</li>
+      <li>State</li>
+      <li>City</li>
+      <li>Gender (if your hackathon is gender-specific, this could help you review easier)</li>
+      <li>Filter by College (If your hackathon is college-specific)</li>
+    </ul>
+
+    <h3>Application Status:</h3>
+    <ul>
+      <li><code>Submitted</code>: They have applied to your hackathon and are up for review</li>
+      <li><code>Accepted</code>: The hacker has been accepted</li>
+      <li><code>Rejected</code>: The hacker has not been accepted</li>
+      <li><code>Waitlisted</code>: The hacker has been waitlisted</li>
+      <li><code>RSVP'd</code>: The hacker has RSVP’d the invite to the hackathon</li>
+      <li><code>Checked-in</code>: The hacker has checked in to the hackathon</li>
+    </ul>
+  </Tab>
+</Tabs>
+
+---
+
+## Reviewing Applications
+
+<p>
+  Upon clicking on an application, you can see all the relevant data required to make an invitation decision and to accept/reject/waitlist them on the basis of it.
+</p>
+
+<img src="/assets/image-9.7.png" alt="Application view" />
+<p align="center"><i>View individual application details</i></p>
+
+
+## Steps to Accept a Participant
+
+1. Click on <code>Accept</code> when:
+  - You want the hacker to participate in the hackathon
+  - You want to <strong>temporarily</strong> shortlist the particular hacker
+
+<Callout title="Note" type="info">
+  The hacker won't receive any email or notification and you can still change your mind.
+</Callout>
+
+<img src="/assets/image-9.8.png" alt="Accept flow" />
+<p align="center"><i>Accepting an application</i></p>
+
+2. In order to confirm the acceptance, click on <code>Send Acceptance Mail</code>, visible on top of the individual application.
+
+<Callout title="Irreversible Action" type="warning">
+  Upon doing so, the hacker will be sent an acceptance email and the process is irreversible.
+</Callout>
+
+3. On receiving the acceptance email, the hacker will be asked to RSVP to the invitation.
+
+
+## Steps to Reject a Participant
+
+1. Click on <code>Reject</code> when:
+  - You are not overall happy with the profile and don't wish to include the hacker in the hackathon
+  - You want to <strong>temporarily</strong> remove them from being added to the Shortlisted/Accepted hackers list
+
+<Callout title="Note" type="info">
+  The hacker won't receive any email or notification and you can still change your mind.
+</Callout>
+
+<img src="/assets/image-9.9.png" alt="Reject flow" />
+<p align="center"><i>Rejecting an application</i></p>
+
+2. In order to confirm the non-acceptance, click on <code>Send Rejection Mail</code>, visible on top of the individual application.
+
+<Callout title="Irreversible Action" type="warning">
+  Upon doing so, the hacker will be sent a non-acceptance email and the process is irreversible.
+</Callout>
+
+
+## Why Waitlist a Participant?
+
+Click on <code>Waitlist</code> when you are not sure about the application (whether to accept or reject).
+
+<Callout title="Note" type="warning">
+  Marking someone as ‘Waitlisted’ immediately notifies them of their waitlisted status on their Hacker Dashboard.
+</Callout>
+
+<img src="/assets/image-9.10.png" alt="Waitlist flow" />
+<p align="center"><i>Waitlisting an application</i></p>
+
+
+## Sending Acceptance/Rejection Emails in Bulk
+
+If you wish to send <strong>permanent</strong> acceptance/rejection emails in bulk after shortlisting the applications, you can do that using the <code>Send acceptance emails</code> and <code>Send rejection mails</code> buttons, available at the start of the Review tab.
+
+<img src="/assets/image-9.11.png" alt="Bulk actions" />
+<p align="center"><i>Bulk acceptance/rejection action</i></p>

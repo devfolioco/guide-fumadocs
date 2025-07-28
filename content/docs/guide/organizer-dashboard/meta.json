@@ -1,0 +1,13 @@
+{
+  "title": "Organizer Dashboard",
+  "description": "Tabs to configure your hackathon on Devfolio",
+  "icon": "Building",
+  "pages": [
+    "overview-tab",
+    "review-tab",
+    "admin-tab",
+    "team-tab",
+    "additional-tab",
+    "update-tab"
+  ]
+}

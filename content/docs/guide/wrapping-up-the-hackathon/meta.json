@@ -1,0 +1,10 @@
+{
+  "title": "Wrapping up the Hackathon",
+  "description": "Tabs to configure your hackathon on Devfolio",
+  "icon": "Building",
+  "pages": [
+    "feedback-tab",
+    "announcing-hackathon-winners",
+    "setting-up-onchain-credentials"
+  ]
+}
