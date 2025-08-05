@@ -12,7 +12,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <img
-          src="/assets/Devfolio - White.png" 
+          src="/assets/Devfolio - White.webp" 
           alt="Devfolio" 
           width={120} 
           height={24}

@@ -5,9 +5,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   icons: {
-    icon: '/assets/devfolio-logo.png',
-    shortcut: '/assets/devfolio-logo.png',
-    apple: '/assets/devfolio-logo.png',
+    icon: '/assets/devfolio-logo.webp',
+    shortcut: '/assets/devfolio-logo.webp',
+    apple: '/assets/devfolio-logo.webp',
   }
 };
 
