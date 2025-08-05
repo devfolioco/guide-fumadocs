@@ -1,14 +1,15 @@
 {
   "title": "Hello Builders",
-  "description": "This is devfolio docs",
+  "description": "This is a comprehensive documentation for users to be able to navigate Devfolio.",
   "icon": "Building",
   "root": true,
   "pages": [
-    "---💙 Devfolio Glossary---",
+    "---💙 Start Here---",
     "fun",
     "creating-and-managing-your-account",
     "linking-your-ethereum-wallet",
     "settings",
+    "keyboard-accessibility",
 
     "---👨‍💻 Devfolio for Hackers---",
     "start-your-devfolio-hacker-experience-here",
