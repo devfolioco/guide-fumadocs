@@ -5,6 +5,7 @@
   "pages": [
     "overview-tab",
     "review-tab",
+    "emails-tab",
     "admin-tab",
     "team-tab",
     "additional-tab",
