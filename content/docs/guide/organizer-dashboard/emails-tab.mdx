@@ -1,0 +1,58 @@
+---
+title: Emails Tab
+description: The Emails tab contains essential features that make it easier to manage your hackathon like sending announcements and managing email templates.
+---
+
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+
+<Tabs items={["Make an Announcement", "Manage Email Templates"]} >
+  <Tab value="Make an Announcement">
+    <p>The Email tab lets you send announcements to hackers — to keep them informed about updates or changes. When clicking on ‘Preview’, a checkbox will appear that allows the announcement to also be sent via email.</p>
+    <img src="/assets/image-9.19.webp" alt="Audience Segments" />
+
+    <Callout title="Tip" type="info">
+      If you wish to send out the announcement as an email (recommended), make sure you check the option to <code>Also send as email</code> before hitting send.
+    </Callout>
+  </Tab>
+
+ <Tab value="Manage Email Templates">
+    <p>The Emails tab comes with several pre-built templates as well to streamline your communication:</p>
+    
+    <ul>
+      <li><strong>Acceptance Emails</strong>: Notify participants of their selection</li>
+      <li><strong>RSVP Communications</strong>: Follow up with accepted participants</li>
+      <li><strong>Rejection Notifications</strong>: Notify participants of their rejection</li>
+      <li><strong>Individual and Team Reminders</strong>: Send reminders to submit profiles for review</li>
+      <li><strong>Upcoming Hackathon Notifications</strong>: Keep participants informed about future events</li>
+    </ul>
+
+    <iframe
+      width="100%"
+      height="400"
+      src="/assets/email-tab.mp4"
+      title="Preview announcement email"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+
+    <h3>Rich Text Editing</h3>
+    <p>All email templates support Markdown formatting, allowing you to:</p>
+    <ul>
+      <li>Add <strong>bold</strong>, <em>italic</em>, and other text formatting</li>
+      <li>Include links and references</li>
+      <li>Add custom styling to emphasize important information</li>
+    </ul>
+
+    <h3>Testing and Preview</h3>
+    <p>Before sending any emails to participants, you can:</p>
+    <ul>
+      <li>Send test emails to yourself to verify content and formatting</li>
+      <li>Preview how your email will look in recipients' inboxes</li>
+    </ul>
+
+    <Callout title="Pro Tip" type="info">
+      Always send a test email to yourself first to ensure everything looks perfect before sending to your participants!
+    </Callout>
+  </Tab>
+</Tabs>

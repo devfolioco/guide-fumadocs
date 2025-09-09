@@ -1,5 +1,5 @@
 {
-  "title": "Admin Tab",
+  "title": "Additional Tab",
   "description": "Tabs to configure your hackathon on Devfolio",
   "icon": "Building",
   "pages": ["volunteer-tab", "logistic-tab"]
