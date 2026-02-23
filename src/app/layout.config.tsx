@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { Logo } from '@/components/logo';
 
 /**
  * Shared layout configurations
@@ -9,18 +10,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: (
-      <>
-        <img
-          src="/assets/Devfolio - White.png" 
-          alt="Devfolio" 
-          width={120} 
-          height={24}
-          className="h-6"
-        />
-        
-      </>
-    ),
+    title: <Logo />,
   },
   links: [
     {
