@@ -1,0 +1,135 @@
+---
+title: Devfolio MCP
+description: Learn about Devfolio MCP (Model Context Protocol) integration.
+---
+
+<Callout title="Announcement" type="info">
+Builders, meet the Devfolio MCP Server (Beta).
+
+Pull your profile. Fetch your hackathons. Draft a submission, all from the comfort of your AI client.
+</Callout>
+
+## 🤔 What is MCP?
+
+**MCP** stands for **Model Context Protocol** - a protocol that securely streams relevant personal or app-specific data to AI models, helping them respond with deeper context and awareness.
+
+In this case, it allows you to connect your Devfolio account to any MCP-compatible AI tool (like Cursor, VS Code extensions, or Claude) using a simple JSON configuration. This means the AI can understand things like your Devfolio profile, projects, and hackathon activity **only if you allow it**.
+
+<Callout title="Want to dive deeper?" type="info">
+Check this out → [Devfolio MCP Explainer](https://nsb.dev/devfolio-mcp-explainer)
+</Callout>
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://drive.google.com/file/d/1LHIWX9uWOmXrJK_dnY0rLRf8Qa4ya76p/preview"
+  title="Devfolio MCP Demo"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
+---
+
+## 🧠 Unlock Devfolio's MCP AI — Step-by-Step Guide
+
+<Callout title="Beta Access Required" type="warning">
+This feature is currently available for Beta Users Only
+</Callout>
+
+---
+
+### ✨ Step 1: Enter
+
+Head to [devfolio.co](https://devfolio.co/) and click on your avatar in the **top-right corner**. From the dropdown, click **Account Settings**.
+
+<img src="/assets/mcp-step1.webp" alt="Account Settings" />
+
+---
+
+### 🧪 Step 2: Join the Beta Club
+
+In the **left sidebar**, find the tab labeled **Beta**. Click it, and hit **Join [Devfolio Beta](https://devfolio.co/settings/beta)**.
+
+<Callout title="Welcome to the experimental zone" type="info">
+You're now part of the experimental zone. No lab coats required.
+</Callout>
+
+<img src="/assets/mcp-step2.webp" alt="Join Beta" />
+
+---
+
+### 🤖 Step 3: Find the "MCP" Gateway
+
+Once you've joined the Beta program, a new tab magically appears just below — called **MCP**. Click it: [https://devfolio.co/settings/mcp](https://devfolio.co/settings/mcp)
+
+<Callout title="What is Devfolio MCP?" type="info">
+Devfolio MCP = Devfolio's Model Context Protocol Server.
+</Callout>
+
+<img src="/assets/mcp-step3.webp" alt="MCP Gateway" />
+
+---
+
+### 🔐 Step 4: Configure the MCP
+
+Inside the MCP tab:
+
+- Generate your **API Key**
+- Copy the auto-generated **JSON config**
+
+<Callout title="Security Warning" type="error">
+Your MCP API key is sensitive — like a password. Anyone with access can act on your behalf. If compromised, revoke it and generate a new one right away.
+</Callout>
+
+---
+
+### 🧩 Step 5: Connect an AI Agent
+
+Take your JSON config and paste it into a compatible MCP AI client like Cursor or any other that supports streamable HTTP MCP servers.
+
+- **Open Your IDE**
+  - Launch your preferred editor (VS Code, Cursor, etc.).
+  - Make sure the MCP-compatible plugin/extension is installed.
+- **Open the Command Palette**
+  - Press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows/Linux).
+  - Type: `MCP` → select `Add MCP Server` (or equivalent).
+- **Paste Your Config**
+  - Paste the JSON config you copied from Devfolio MCP Tab.
+  - It should look like this:
+
+```json
+{
+  "mcpServers": {
+    "devfolio": {
+      "url": "https://mcp.devfolio.co/mcp?apiKey=XXXX-XXXX-XXXX-XXXX-XXXX"
+    }
+  }
+}
+```
+
+<Callout title="What's happening?" type="info">
+You're essentially plugging your AI into your Devfolio universe.
+</Callout>
+
+<img src="/assets/mcp-step5.webp" alt="Cursor IDE configured with Devfolio MCP" />
+<p align="center"><i>Example: Cursor IDE configured with Devfolio MCP</i></p>
+
+---
+
+### 💬 Step 6: Talk to Your Devfolio AI!
+
+Here are some good sample questions to ask the AI:
+
+- What is my username?
+- Analyze and summarize the prizes for the `hackathonName` hackathon.
+- Which prizes from the hackathon are most relevant to my project?
+- Analyze my project, and create a submission for the `hackathonName` hackathon.
+- Update the tagline of my project `projectName` to be more impactful.
+
+<Callout title="Success!" type="info">
+🎉 Hola! You now have an AI buddy that knows your Devfolio activity.
+</Callout>
+
+<img src="/assets/mcp-step6.webp" alt="AI interaction example" />
+

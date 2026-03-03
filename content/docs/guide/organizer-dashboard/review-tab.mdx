@@ -1,17 +1,16 @@
 ---
 title: Review Tab
-description: The Overview Tab helps you accept, reject, or waitlist applications as per your hackathon guideline.
+description: The Review Tab helps you accept, reject, or waitlist applications as per your hackathon guideline.
 ---
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 
 <Tabs items={["Online Mode", "Offline and Online with Application Review Mode"]}>
   <Tab value="Online Mode">
-    <p>
-      In <code>Online</code> mode, you can see a list of hackers with their respective status. You can filter out the list by Country or City depending on the nature of your request.
-    </p>
+    In <code>Online</code> mode, you can see a list of hackers with their respective status. You can filter out the list by Country or City depending on the nature of your request.
 
-    <p>The <strong>status of the applicant</strong> can be:</p>
+    The <strong>status of the applicant</strong> can be:
+    
     <ul>
       <li><code>Profile Submitted</code>: They have only applied to your hackathon</li>
       <li><code>Project Submitted</code>: They have applied as well as submitted their project to your hackathon</li>
@@ -22,9 +21,7 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
   </Tab>
 
   <Tab value="Offline and Online with Application Review Mode">
-    <p>
-      Here, you can review individual and team profiles to extend invitations to them to attend your hackathon (accept), decline their application (reject), or waitlist (apply/reject later) them. You can apply various filters to help you in the process.
-    </p>
+    Here, you can review individual and team profiles to extend invitations to them to attend your hackathon (accept), decline their application (reject), or waitlist (apply/reject later) them. You can apply various filters to help you in the process.
 
     <img src="/assets/image (275).webp" alt="Offline/Review mode view" />
     <p align="center"><i>Review Tab – Application Review Mode</i></p>
@@ -61,6 +58,37 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 <img src="/assets/image (269).webp" alt="Application view" />
 <p align="center"><i>View individual application details</i></p>
 
+---
+
+## Google Sheet Integration
+
+<Callout title="Paid Feature" type="info">
+This feature is available for paid hackathons only.
+</Callout>
+
+### Sync to Google Sheets
+
+Live syncs the hacker application data to your Google Sheet. Data syncs in real-time as new hackers register or update their application, keeping your team always up-to-date with the latest information.
+
+### Access Control
+
+- Only organizers added to the team in the dashboard have **edit access** to the sheet
+- Everyone else with the link can **view** the data
+
+### How to Set Up
+
+1. Click the **Connect Sheet** button in the Review tab
+2. Wait for the status to show **Connected**
+3. Click **Open Sheet** to view your synced application data
+
+<Callout title="Where to Access This Feature" type="info">
+Navigate to `https://org.devfolio.co/<hackathon-slug>/review` to find the Google Sheet Integration options.
+</Callout>
+
+<img src="/assets/google-sheet-integration.webp" alt="Google Sheet Integration - Access at https://org.devfolio.co/<hackathon-slug>/review" />
+<p align="center"><i>Google Sheet Integration setup and access</i></p>
+
+---
 
 ## Steps to Accept a Participant
 
