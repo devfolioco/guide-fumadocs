@@ -4,8 +4,8 @@
   "icon": "Building",
   "root": true,
   "pages": [
-    "---💙 Start Here---",
-    "fun",
+  "---💙 Start Here---",
+  "welcome-to-devfolio",
     "creating-and-managing-your-account",
     "linking-your-ethereum-wallet",
     "settings",

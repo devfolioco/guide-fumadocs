@@ -17,7 +17,7 @@ const config = {
     return [
       {
         source: "/",
-        destination: "/docs/guide/fun",
+        destination: "/docs/guide/welcome-to-devfolio",
         permanent: false, // set to false if it's a temporary redirect
       },
     ];
