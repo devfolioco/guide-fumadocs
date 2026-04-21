@@ -2,9 +2,13 @@
 title: Devfolio MCP
 ---
 
+import { Tabs, Tab } from "fumadocs-ui/components/tabs";
+
 Devfolio MCP lets you connect Devfolio to AI tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://openai.com/codex), and [Cursor](https://www.cursor.com/) so they can help with hackathon submissions using your Devfolio context.
 
 **MCP** stands for **[Model Context Protocol](https://nsb.dev/devfolio-mcp-explainer)**. It lets compatible AI tools securely connect to external apps and use relevant context while helping you.
+
+Once connected, your AI tool can use your Devfolio context to help draft and improve your hackathon submission.
 
 <iframe
   width="100%"
@@ -16,27 +20,29 @@ Devfolio MCP lets you connect Devfolio to AI tools like [Claude Code](https://co
   allowFullScreen
 />
 
-## Quick start
+## Quick Start
 
 1. Open [`Account Settings > MCP`](https://devfolio.co/settings/mcp).
 2. Click `Generate API key`.
-3. Pick the setup method for your AI tool.
-4. Paste or run the setup details shown.
+3. Choose the setup format for your AI tool.
+4. Paste the prompt, run the command, or copy the JSON shown.
 5. Ask your assistant to help with your hackathon project submission.
 
 <Callout title="Keep your API key private" type="error">
 Your MCP API key is sensitive, like a password. Anyone with access can act on your behalf. If it is compromised, revoke it and generate a new one right away.
 </Callout>
 
-## Where can I find Devfolio MCP?
+## Where Can I Find Devfolio MCP?
 
-You can access Devfolio MCP from Account Settings. Eligible hackers can also find MCP directly during the hackathon project submission flow.
+You can access Devfolio MCP from Account Settings. You may also see MCP shortcuts during the hackathon project submission flow.
+
+You will see these shortcuts only for hackathons where project submissions are open and your account is eligible to submit.
 
 ### 1. From Account Settings
 
 Go to your profile menu, open `Account Settings`, and select the `MCP` tab.
 
-This is the main place to generate your MCP API key, copy setup details, and manage access.
+This is the main place to create and manage your MCP API key.
 
 <img src="/assets/mcp-setting.webp" alt="Devfolio MCP tab in Account Settings" />
 
@@ -44,11 +50,9 @@ Click `Generate API key` to create your MCP API key.
 
 <img src="/assets/mcp-configure-setting.webp" alt="Devfolio MCP setup options in Account Settings" />
 
-### 2. From your hackathon dashboard
+### 2. From Your Hackathon Dashboard
 
-For eligible hackathons, you may also see an `MCP Integration` card on your hackathon dashboard.
-
-<img src="/assets/mcp-dashboard.webp" alt="MCP Integration card on a hackathon dashboard" />
+For hackathons where submissions are open to you, you may also see an `MCP Integration` card on your hackathon dashboard.
 
 This card lets you:
 
@@ -58,9 +62,11 @@ This card lets you:
 - Revoke MCP access if needed.
 - Open a quick explainer for how MCP works.
 
+<img src="/assets/mcp-dashboard.webp" alt="MCP Integration card on a hackathon dashboard" />
+
 <img src="/assets/mcp-configure-model-dashboard.webp" alt="Devfolio MCP setup window opened from the hackathon dashboard" />
 
-### 3. From the project submission page
+### 3. From the Project Submission Page
 
 When you are submitting a hackathon project, you may see a small floating MCP assistant button in the bottom-right corner of the submission page.
 
@@ -78,23 +84,14 @@ Clicking this button opens the MCP setup window without leaving the submission p
 
 <img src="/assets/mcp-configure-model-project.webp" alt="Devfolio MCP setup window opened from the project submission page" />
 
-## How to set it up
-
-When you open the MCP setup window, choose the method that matches your AI tool:
-
-- `Prompt`: Best for chat-based assistants where you want to paste setup instructions.
-- `Claude Code`: Best if you use Claude Code from your terminal.
-- `Codex`: Best if you use Codex from your terminal.
-- `Cursor`: Best if you want to add Devfolio MCP directly to Cursor.
-- `JSON`: Best for other MCP-compatible clients that accept a server configuration.
-
-If you do not already have an MCP API key, Devfolio will ask you to generate one first.
-
-## Setup commands and configuration
+## Setup Commands and Configuration
 
 Devfolio fills in your actual MCP API key in the setup window. The examples below use `YOUR_API_KEY` as a placeholder.
 
-### Prompt
+Choose the tab that matches your AI tool.
+
+<Tabs items={["Prompt", "Claude Code", "Codex", "Cursor", "JSON"]}>
+  <Tab value="Prompt">
 
 Copy this prompt and paste it into a new chat with your AI assistant:
 
@@ -103,7 +100,9 @@ Please connect to the Devfolio MCP server using the following URL:
 https://mcp.devfolio.co/mcp?apiKey=YOUR_API_KEY
 ```
 
-### Claude Code
+  </Tab>
+
+  <Tab value="Claude Code">
 
 Copy this command and run it in your terminal:
 
@@ -112,7 +111,9 @@ claude mcp add --transport http devfolio --scope user https://mcp.devfolio.co/mc
   --header "x-api-key: YOUR_API_KEY"
 ```
 
-### Codex
+  </Tab>
+
+  <Tab value="Codex">
 
 Copy this command and run it in your terminal:
 
@@ -121,11 +122,15 @@ codex mcp add devfolio \
   --url "https://mcp.devfolio.co/mcp?apiKey=YOUR_API_KEY"
 ```
 
-### Cursor
+  </Tab>
+
+  <Tab value="Cursor">
 
 Click `Add to Cursor` in the setup window, then approve the Devfolio MCP server installation in Cursor.
 
-### JSON
+  </Tab>
+
+  <Tab value="JSON">
 
 If your MCP client asks for a JSON configuration, copy this setup from Devfolio MCP:
 
@@ -139,11 +144,14 @@ If your MCP client asks for a JSON configuration, copy this setup from Devfolio 
 }
 ```
 
-## What can I ask my AI assistant?
+  </Tab>
+</Tabs>
+
+## What Can I Ask My AI Assistant?
 
 After connecting Devfolio MCP, try prompts like:
 
-- `Draft a project submission for this hackathon using my Devfolio project details.`
+- `Submit my project to Devfolio.`
 - `Suggest the best prize tracks for my project.`
 - `Rewrite my tagline to be clearer and more judge-friendly.`
 - `Check whether my submission is missing anything important.`
