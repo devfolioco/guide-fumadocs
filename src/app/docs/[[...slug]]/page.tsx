@@ -10,6 +10,7 @@ import { createRelativeLink } from "fumadocs-ui/mdx";
 import { getMDXComponents } from "@/mdx-components";
 import posthog from "posthog-js";
 import { Rate } from "@/components/rate";
+import { DocsImageLightbox } from "@/components/zoomable-image";
 import { LLMCopyButton, ViewOptions } from "./page.client";
 //import { AISearchTrigger } from "@/components/ai";
 //import { cn } from "@/lib/utils";
@@ -68,12 +69,15 @@ export default async function Page(props: {
       </div>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDXContent
-          components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
-          })}
-        />
+        <div data-docs-body="">
+          <DocsImageLightbox />
+          <MDXContent
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </div>
       </DocsBody>
       <Rate
         onRateAction={async (url, feedback) => {
