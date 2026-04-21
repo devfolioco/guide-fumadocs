@@ -4,11 +4,9 @@ title: Devfolio MCP
 
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 
-Devfolio MCP lets you connect Devfolio to AI tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://openai.com/codex), and [Cursor](https://www.cursor.com/) so they can help with hackathon submissions using your Devfolio context.
+Devfolio [MCP](https://nsb.dev/devfolio-mcp-explainer) lets you connect Devfolio to AI tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://openai.com/codex), and [Cursor](https://www.cursor.com/), so they can help you with your hackathon submissions using context from your local project files.
 
-**MCP** stands for **[Model Context Protocol](https://nsb.dev/devfolio-mcp-explainer)**. It lets compatible AI tools securely connect to external apps and use relevant context while helping you.
-
-Once connected, your AI tool can use your Devfolio context to help draft and improve your hackathon submission.
+Once connected, your AI tool can quickly understand your codebase, help you write stronger submissions faster, surface relevant tracks to apply for, and make it easier to showcase what you’ve built.
 
 <iframe
   width="100%"
@@ -26,7 +24,6 @@ Once connected, your AI tool can use your Devfolio context to help draft and imp
 2. Click `Generate API key`.
 3. Choose the setup format for your AI tool.
 4. Paste the prompt, run the command, or copy the JSON shown.
-5. Ask your assistant to help with your hackathon project submission.
 
 <Callout title="Keep your API key private" type="error">
 Your MCP API key is sensitive, like a password. Anyone with access can act on your behalf. If it is compromised, revoke it and generate a new one right away.
@@ -34,15 +31,13 @@ Your MCP API key is sensitive, like a password. Anyone with access can act on yo
 
 ## Where Can I Find Devfolio MCP?
 
-You can access Devfolio MCP from Account Settings. You may also see MCP shortcuts during the hackathon project submission flow.
+You can find Devfolio MCP in Account Settings, your hackathon dashboard, and the project submission page.
 
-You will see these shortcuts only for hackathons where project submissions are open and your account is eligible to submit.
+Hackathon dashboard and submission-page shortcuts appear only when project submissions are open and your account is eligible to submit.
 
 ### 1. From Account Settings
 
 Go to your profile menu, open `Account Settings`, and select the `MCP` tab.
-
-This is the main place to create and manage your MCP API key.
 
 <img src="/assets/mcp-setting.webp" alt="Devfolio MCP tab in Account Settings" />
 
@@ -54,41 +49,23 @@ Click `Generate API key` to create your MCP API key.
 
 For hackathons where submissions are open to you, you may also see an `MCP Integration` card on your hackathon dashboard.
 
-This card lets you:
-
-- Check whether MCP is ready.
-- Set up MCP if you have not connected it yet.
-- View your MCP setup if it is already connected.
-- Revoke MCP access if needed.
-- Open a quick explainer for how MCP works.
-
 <img src="/assets/mcp-dashboard.webp" alt="MCP Integration card on a hackathon dashboard" />
 
 <img src="/assets/mcp-configure-model-dashboard.webp" alt="Devfolio MCP setup window opened from the hackathon dashboard" />
 
 ### 3. From the Project Submission Page
 
-When you are submitting a hackathon project, you may see a small floating MCP assistant button in the bottom-right corner of the submission page.
-
-Before setup, hovering over the button shows:
-
-`Save Time. Submit via MCP.`
-
-After MCP is connected, it says:
-
-`MCP enabled`
+When you are submitting a hackathon project, you may see a small floating MCP assistant button in the bottom-left corner of the submission page.
 
 <img src="/assets/mcp-project.webp" alt="MCP assistant button on the project submission page" />
 
-Clicking this button opens the MCP setup window without leaving the submission page.
+Clicking this button opens the MCP setup window.
 
 <img src="/assets/mcp-configure-model-project.webp" alt="Devfolio MCP setup window opened from the project submission page" />
 
 ## Setup Commands and Configuration
 
 Devfolio fills in your actual MCP API key in the setup window. The examples below use `YOUR_API_KEY` as a placeholder.
-
-Choose the tab that matches your AI tool.
 
 <Tabs items={["Prompt", "Claude Code", "Codex", "Cursor", "JSON"]}>
   <Tab value="Prompt">
@@ -147,7 +124,7 @@ If your MCP client asks for a JSON configuration, copy this setup from Devfolio 
   </Tab>
 </Tabs>
 
-## What Can I Ask My AI Assistant?
+## Example Prompts
 
 After connecting Devfolio MCP, try prompts like:
 
@@ -156,13 +133,6 @@ After connecting Devfolio MCP, try prompts like:
 - `Rewrite my tagline to be clearer and more judge-friendly.`
 - `Check whether my submission is missing anything important.`
 - `Summarize the prizes for this hackathon.`
-
-## Troubleshooting
-
-- If you do not see the `MCP Integration` card, check that project submissions are available for that hackathon and that you are eligible to submit.
-- If you are on a phone, use a desktop device for the dashboard and submission-page MCP setup shortcuts.
-- If your API key may be compromised, revoke access from [`Account Settings > MCP`](https://devfolio.co/settings/mcp) and generate a new key.
-- If your AI tool does not accept the setup details, use the `JSON` option with any MCP-compatible client that supports remote MCP servers.
 
 <Callout title="Access control" type="info">
 You can manage or revoke MCP access from [`Account Settings > MCP`](https://devfolio.co/settings/mcp).
