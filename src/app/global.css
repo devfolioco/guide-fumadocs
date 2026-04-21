@@ -3,3 +3,199 @@
 @import 'fumadocs-ui/css/preset.css';
 
 @source '../../node_modules/fumadocs-ui/dist/**/*.js';
+
+.zoomable-image {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: inherit;
+}
+
+.zoomable-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0.5rem;
+  transition:
+    opacity 150ms ease,
+    transform 180ms cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zoomable-image:hover img {
+    opacity: 0.94;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
+  }
+}
+
+.zoomable-image:focus-visible {
+  outline: 2px solid hsl(var(--fd-primary));
+  outline-offset: 4px;
+}
+
+[data-docs-body] img {
+  cursor: zoom-in;
+}
+
+[data-docs-body] img:not(.zoomable-image img) {
+  transition:
+    opacity 150ms ease,
+    transform 180ms cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-docs-body] img:not(.zoomable-image img):hover {
+    opacity: 0.94;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
+  }
+}
+
+.image-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgb(0 0 0 / 0.78);
+  cursor: zoom-out;
+  animation: image-zoom-backdrop-in 240ms cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+.image-zoom[data-state='closing'] {
+  animation: image-zoom-backdrop-out 220ms cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+.image-zoom__image {
+  position: fixed;
+  top: var(--zoom-final-top);
+  left: var(--zoom-final-left);
+  width: var(--zoom-final-width);
+  height: var(--zoom-final-height);
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.45);
+  cursor: default;
+  transform-origin: center;
+  animation: image-zoom-image-in 280ms cubic-bezier(0.645, 0.045, 0.355, 1) both;
+  will-change: transform, opacity;
+}
+
+.image-zoom[data-state='closing'] .image-zoom__image {
+  animation: image-zoom-image-out 220ms cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+
+.image-zoom__close {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.42);
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  animation: image-zoom-close-in 180ms ease 160ms both;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
+}
+
+.image-zoom__close:hover {
+  background: rgb(255 255 255 / 0.16);
+  transform: scale(1.04);
+}
+
+.image-zoom__close:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .image-zoom__close {
+    display: none;
+  }
+}
+
+@keyframes image-zoom-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes image-zoom-backdrop-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes image-zoom-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes image-zoom-image-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes image-zoom-close-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoomable-image img,
+  [data-docs-body] img:not(.zoomable-image img),
+  .image-zoom,
+  .image-zoom__image,
+  .image-zoom__close {
+    animation: none;
+    transition: none;
+  }
+
+  .zoomable-image:hover img,
+  [data-docs-body] img:not(.zoomable-image img):hover,
+  .image-zoom__close:hover {
+    transform: none;
+  }
+}
