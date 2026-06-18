@@ -2,31 +2,20 @@
 title: Devfolio MCP
 ---
 
-import { Tabs, Tab } from "fumadocs-ui/components/tabs";
-
-Devfolio [MCP](https://nsb.dev/devfolio-mcp-explainer) lets you connect Devfolio to AI tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://openai.com/codex), and [Cursor](https://www.cursor.com/), so they can help you with your hackathon submissions using context from your local project files.
+Devfolio [MCP](https://nsb.dev/devfolio-mcp-explainer) lets you connect Devfolio to AI tools like [Claude Code](https://code.claude.com/docs/en/overview), [Codex](https://openai.com/codex), [Cursor](https://www.cursor.com/), and [OpenCode](https://opencode.ai/), so they can help you with your hackathon submissions using context from your local project files.
 
 Once connected, your AI tool can quickly understand your codebase, help you write stronger submissions faster, surface relevant tracks to apply for, and make it easier to showcase what you’ve built.
 
-<iframe
-  width="100%"
-  height="400"
-  src="https://www.youtube.com/embed/BnyOcD7fIqI"
-  title="Devfolio MCP Demo"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-/>
+<Video src="https://www.youtube.com/embed/nRf_7xiLSqQ" title="Devfolio MCP Demo" />
 
 ## Quick Start
 
 1. Open [`Account Settings > MCP`](https://devfolio.co/settings/mcp).
-2. Click `Generate API key`.
-3. Choose the setup format for your AI tool.
-4. Paste the prompt, run the command, or copy the JSON shown.
+2. Choose your AI tool and run the command or paste the config shown.
+3. On first connect, follow the steps in your browser to authorize Devfolio.
 
-<Callout title="Keep your API key private" type="error">
-Your MCP API key is sensitive, like a password. Anyone with access can act on your behalf. If it is compromised, revoke it and generate a new one right away.
+<Callout title="Manage access" type="info">
+On first connect, your AI tool will open a browser to authorize Devfolio. You can revoke that access any time from **Connected clients** on the MCP settings page.
 </Callout>
 
 ## Where Can I Find Devfolio MCP?
@@ -41,17 +30,17 @@ Go to your profile menu, open `Account Settings`, and select the `MCP` tab.
 
 <img src="/assets/mcp-setting.webp" alt="Devfolio MCP tab in Account Settings" />
 
-Click `Generate API key` to create your MCP API key.
-
-<img src="/assets/mcp-configure-setting.webp" alt="Devfolio MCP setup options in Account Settings" />
+Choose your AI tool from the setup options, run the command or paste the config, then authorize Devfolio in your browser on first connect.
 
 ### 2. From Your Hackathon Dashboard
 
 For hackathons where submissions are open to you, you may also see an `MCP Integration` card on your hackathon dashboard.
 
-<img src="/assets/mcp-dashboard.webp" alt="MCP Integration card on a hackathon dashboard" />
+<img src="/assets/mcp-integration-tab.webp" alt="MCP Integration tab on the hackathon dashboard" />
 
-<img src="/assets/mcp-configure-model-dashboard.webp" alt="Devfolio MCP setup window opened from the hackathon dashboard" />
+Use `Setup MCP` Button for the next steps to configure 
+
+<img src="/assets/mcp-dashboard.webp" alt="MCP Integration card on a hackathon dashboard" />
 
 ### 3. From the Project Submission Page
 
@@ -65,28 +54,26 @@ Clicking this button opens the MCP setup window.
 
 ## Setup Commands and Configuration
 
-Devfolio fills in your actual MCP API key in the setup window. The examples below use `YOUR_API_KEY` as a placeholder.
+<Tabs items={["Claude Code", "Cursor", "Codex", "OpenCode", "JSON"]}>
+  <Tab value="Claude Code">
 
-<Tabs items={["Prompt", "Claude Code", "Codex", "Cursor", "JSON"]}>
-  <Tab value="Prompt">
+Run this command in your terminal:
 
-Copy this prompt and paste it into a new chat with your AI assistant:
-
-```text
-Please connect to the Devfolio MCP server using the following URL:
-https://mcp.devfolio.co/mcp?apiKey=YOUR_API_KEY
+```bash
+claude mcp add --transport http devfolio --scope user https://mcp.devfolio.co/mcp
 ```
+
+**Next steps:**
+1. Run the command in your terminal to add the Devfolio server.
+2. Open Claude Code and run `/mcp`.
+3. Follow the steps in your browser to authorize Devfolio.
+4. Ask: **"Submit my project to Devfolio"**
 
   </Tab>
 
-  <Tab value="Claude Code">
+  <Tab value="Cursor">
 
-Copy this command and run it in your terminal:
-
-```bash
-claude mcp add --transport http devfolio --scope user https://mcp.devfolio.co/mcp \
-  --header "x-api-key: YOUR_API_KEY"
-```
+Click `Add to Cursor` in the setup window, then approve the Devfolio MCP server installation in Cursor. You will be prompted to authorize Devfolio in your browser on first connect.
 
   </Tab>
 
@@ -95,27 +82,36 @@ claude mcp add --transport http devfolio --scope user https://mcp.devfolio.co/mc
 Copy this command and run it in your terminal:
 
 ```bash
-codex mcp add devfolio \
-  --url "https://mcp.devfolio.co/mcp?apiKey=YOUR_API_KEY"
+codex mcp add devfolio --url "https://mcp.devfolio.co/mcp"
 ```
 
   </Tab>
 
-  <Tab value="Cursor">
+  <Tab value="OpenCode">
 
-Click `Add to Cursor` in the setup window, then approve the Devfolio MCP server installation in Cursor.
-
-  </Tab>
-
-  <Tab value="JSON">
-
-If your MCP client asks for a JSON configuration, copy this setup from Devfolio MCP:
+Add the following to your OpenCode MCP config:
 
 ```json
 {
   "mcpServers": {
     "devfolio": {
-      "url": "https://mcp.devfolio.co/mcp?apiKey=YOUR_API_KEY"
+      "url": "https://mcp.devfolio.co/mcp"
+    }
+  }
+}
+```
+
+  </Tab>
+
+  <Tab value="JSON">
+
+For any MCP-compatible client, use this configuration:
+
+```json
+{
+  "mcpServers": {
+    "devfolio": {
+      "url": "https://mcp.devfolio.co/mcp"
     }
   }
 }
@@ -135,5 +131,7 @@ After connecting Devfolio MCP, try prompts like:
 - `Summarize the prizes for this hackathon.`
 
 <Callout title="Access control" type="info">
-You can manage or revoke MCP access from [`Account Settings > MCP`](https://devfolio.co/settings/mcp).
+You can view and revoke authorized agents any time from the **Connected clients** section at [`Account Settings > MCP`](https://devfolio.co/settings/mcp).
 </Callout>
+
+

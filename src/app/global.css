@@ -41,6 +41,13 @@
   outline-offset: 4px;
 }
 
+/* The MDX wrapper div breaks prose's first-child margin reset, leaving a large
+   gap above the first heading/paragraph. Reset it so every page starts tight,
+   matching pages without a description. */
+[data-docs-body] > :first-child {
+  margin-top: 0;
+}
+
 [data-docs-body] img {
   cursor: zoom-in;
 }

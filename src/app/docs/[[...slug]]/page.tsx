@@ -56,7 +56,11 @@ export default async function Page(props: {
   const MDXContent = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage
+      toc={page.data.toc}
+      full={page.data.full}
+      tableOfContent={{ style: "clerk" }}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <div className="flex flex-row gap-2 items-center border-b pt-2 pb-6">
         {/*@ts-expect-error: this library type is incorrect in v3*/}
