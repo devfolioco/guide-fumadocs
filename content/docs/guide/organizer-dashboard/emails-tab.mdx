@@ -3,8 +3,6 @@ title: Emails Tab
 description: The Emails tab contains essential features that make it easier to manage your hackathon like sending announcements and managing email templates.
 ---
 
-import { Tabs, Tab } from "fumadocs-ui/components/tabs";
-
 <Tabs items={["Make an Announcement", "Manage Email Templates"]} >
   <Tab value="Make an Announcement">
     <p>The Email tab lets you send announcements to hackers — to keep them informed about updates or changes. When clicking on ‘Preview’, a checkbox will appear that allows the announcement to also be sent via email.</p>
@@ -26,15 +24,9 @@ import { Tabs, Tab } from "fumadocs-ui/components/tabs";
       <li><strong>Upcoming Hackathon Notifications</strong>: Keep participants informed about future events</li>
     </ul>
 
-    <iframe
-      width="100%"
-      height="400"
-      src="/assets/email-tab.mp4"
-      title="Preview announcement email"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
+    <video width="100%" controls>
+      <source src="/assets/email-tab.mp4" type="video/mp4" />
+    </video>
 
     <h3>Rich Text Editing</h3>
     <p>All email templates support Markdown formatting, allowing you to:</p>
