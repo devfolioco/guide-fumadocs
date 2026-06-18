@@ -8,6 +8,7 @@ import { File, Files, Folder } from 'fumadocs-ui/components/files';
 import { Banner } from '@/components/banner';
 import { ZoomableImage } from '@/components/zoomable-image';
 import { Video } from '@/components/video';
+import { Caption } from '@/components/caption';
 
 
 // use this function to get MDX components, you will need it for rendering MDX
@@ -26,6 +27,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     File,
     Folder,
     Video,
+    Caption,
     ...components,
     Banner,
   };
